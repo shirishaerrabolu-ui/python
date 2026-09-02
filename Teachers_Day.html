@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Teacher's Day 🎓</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: #10182f;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            height: 70px;
+            background: #080d20;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 0 20px #000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd166;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .book {
+            font-size: 80px;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-18px);
+            }
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            margin: 15px 0;
+            color: #ffd166;
+            text-shadow: 0 0 20px #ffd166;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #cbd5ff;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: #ff6b6b;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 0 20px #ff6b6b;
+        }
+
+        .button:hover {
+            transform: scale(1.08);
+            background: #ffd166;
+            color: #111;
+        }
+
+        /* FLOATING STARS */
+
+        .star {
+            position: absolute;
+            color: #ffd166;
+            font-size: 20px;
+            animation: starMove 5s infinite linear;
+        }
+
+        .s1 { left: 10%; top: 20%; }
+        .s2 { left: 85%; top: 30%; animation-delay: 1s; }
+        .s3 { left: 20%; top: 75%; animation-delay: 2s; }
+        .s4 { left: 75%; top: 70%; animation-delay: 3s; }
+
+        @keyframes starMove {
+            0% {
+                transform: translateY(0) rotate(0);
+                opacity: 0.2;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-80px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* MESSAGE */
+
+        .message {
+            padding: 80px 10%;
+            background: #17203d;
+            text-align: center;
+        }
+
+        .message h2 {
+            color: #ffd166;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .message p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 19px;
+            line-height: 1.8;
+            color: #dce3ff;
+        }
+
+        /* CARDS */
+
+        .cards-section {
+            padding: 80px 8%;
+            text-align: center;
+            background: #0d142b;
+        }
+
+        .cards-section h2 {
+            font-size: 40px;
+            color: #ffd166;
+            margin-bottom: 45px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 280px;
+            min-height: 250px;
+            background: #1c2850;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #394b7a;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 35px #000;
+            border-color: #ffd166;
+        }
+
+        .card-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #ffd166;
+            margin-bottom: 12px;
+            font-size: 23px;
+        }
+
+        .card p {
+            color: #cbd5ff;
+            line-height: 1.6;
+        }
+
+        /* TEACHER CARD */
+
+        .teacher {
+            padding: 90px 20px;
+            text-align: center;
+            background: #151d38;
+        }
+
+        .teacher-card {
+            max-width: 650px;
+            margin: auto;
+            background: #202d56;
+            padding: 45px;
+            border-radius: 25px;
+            box-shadow: 0 0 35px #080b18;
+            border: 2px solid #ffd166;
+        }
+
+        .teacher-icon {
+            font-size: 90px;
+            margin-bottom: 15px;
+        }
+
+        .teacher-card h2 {
+            font-size: 38px;
+            color: #ffd166;
+        }
+
+        .teacher-card h3 {
+            margin: 10px 0 20px;
+            color: #ff8fa3;
+        }
+
+        .teacher-card p {
+            line-height: 1.8;
+            color: #dbe2ff;
+            font-size: 18px;
+        }
+
+        /* QUOTE */
+
+        .quote {
+            padding: 80px 20px;
+            text-align: center;
+            background: #080d20;
+        }
+
+        .quote h2 {
+            font-size: 35px;
+            color: #ffd166;
+            margin-bottom: 20px;
+        }
+
+        .quote p {
+            font-size: 25px;
+            font-style: italic;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #050814;
+            padding: 30px;
+            text-align: center;
+            color: #aeb8df;
+        }
+
+        footer span {
+            color: #ffd166;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width: 700px) {
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            nav {
+                padding: 0 4%;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 14px;
+            }
+
+            .teacher-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="logo">🎓 Teacher's Day</div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#message">Message</a>
+            <a href="#teachers">Teachers</a>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="star s1">✦</div>
+        <div class="star s2">✦</div>
+        <div class="star s3">★</div>
+        <div class="star s4">✧</div>
+
+        <div class="hero-content">
+
+            <div class="book">📚</div>
+
+            <h1>HAPPY TEACHER'S DAY</h1>
+
+            <h2>To the people who turn dreams into possibilities ❤️</h2>
+
+            <p>
+                A great teacher doesn't just teach lessons from books.
+                They teach us how to believe in ourselves,
+                how to face challenges, and how to become better every day.
+            </p>
+
+            <a href="#message" class="button">
+                💛 Read Our Message
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- MESSAGE -->
+
+    <section class="message" id="message">
+
+        <h2>🌟 A Special Message</h2>
+
+        <p>
+            Dear Teachers, you are the reason classrooms become places
+            of imagination, discovery and inspiration. Every explanation,
+            every correction, every word of encouragement and every lesson
+            you teach becomes a small part of our future.
+            <br><br>
+            Thank you for believing in us even when we don't believe
+            in ourselves. Thank you for guiding us, supporting us and
+            helping us discover what we can achieve.
+            <br><br>
+            <strong>Happy Teacher's Day! ❤️</strong>
+        </p>
+
+    </section>
+
+
+    <!-- CARDS -->
+
+    <section class="cards-section">
+
+        <h2>What Makes A Great Teacher?</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">💡</div>
+                <h3>Inspiration</h3>
+                <p>
+                    Teachers inspire students to dream bigger
+                    and believe that anything is possible.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">❤️</div>
+                <h3>Kindness</h3>
+                <p>
+                    A little encouragement from a teacher
+                    can make a huge difference in a student's life.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">🧠</div>
+                <h3>Knowledge</h3>
+                <p>
+                    Teachers give us knowledge that stays with us
+                    long after we leave the classroom.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Guidance</h3>
+                <p>
+                    Teachers help us find our direction and
+                    prepare us for the future.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TEACHER CARD -->
+
+    <section class="teacher" id="teachers">
+
+        <div class="teacher-card">
+
+            <div class="teacher-icon">👩‍🏫</div>
+
+            <h2>Our Amazing Teachers</h2>
+
+            <h3>Heroes Without Capes 🦸</h3>
+
+            <p>
+                Teachers may not wear superhero costumes,
+                but every day they enter the classroom and
+                change lives.
+                <br><br>
+                You don't just teach subjects.
+                <br>
+                You teach <strong>life.</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUOTE -->
+
+    <section class="quote">
+
+        <h2>✨ Teacher's Day Quote</h2>
+
+        <p>
+            "A teacher plants the seeds of knowledge
+            that grow forever."
+        </p>
+
+        <br>
+
+        <p>🌹 Thank You For Everything 🌹</p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Made with ❤️ for all the amazing teachers
+        </p>
+
+        <p>
+            © 2026 <span>Teacher's Day Celebration</span>
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // Welcome message
+
+        window.onload = function() {
+            setTimeout(function() {
+                alert("🎓 Happy Teacher's Day! Thank you to all the amazing teachers! ❤️");
+            }, 800);
+        };
+
+
+        // Button click effect
+
+        document.querySelector(".button").addEventListener("click", function() {
+
+            this.innerHTML = "❤️ Thank You, Teachers!";
+
+        });
+
+    </script>
+
+</body>
+</html>
